@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @booking = policy_scope(Booking)
   end
 
   def new
