@@ -7,12 +7,18 @@ class SpacesController < ApplicationController
   end
 
   def show
+    @space = Space.find(params[:id])
+    authorize @space
   end
 
   def create
+    @space = Space.new(space_params)
+    @space.user = current_user
+    authorize @space
   end
 
   def new
+    @space = Space.new
     authorize @space
   end
 
@@ -24,4 +30,11 @@ class SpacesController < ApplicationController
 
   def update
   end
+
+  private
+
+  def space_params
+    require(:space).permit(:price, :end_date, :start_date, :adress, :size)
+  end
+
 end
