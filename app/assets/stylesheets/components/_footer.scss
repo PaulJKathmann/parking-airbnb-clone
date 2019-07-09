@@ -1,0 +1,16 @@
+.footer {
+  background-color: rgb(50,50,50);
+  position: absolute; padding: 10px;
+  bottom: 0; left: 0; right: 0;
+  color: rgb(220,220,220);
+  text-align: center;
+}
+
+.footer-link {
+  color: rgb(235,235,235);
+}
+
+.footer-link:hover {
+  color: rgb(243,243,243);
+  text-decoration: none;
+}
