@@ -1,0 +1,33 @@
+.banner{
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: image-url("https://files.slack.com/files-pri/T02NE0241-FLB4T9RAA/map-dark-berlin.png");
+  background-size: cover;
+  // linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+  h1{
+    color: white;
+    font-weight: bold;
+    font-size: 45px;
+  }
+  p {
+    color: white;
+    opacity: 0.8;
+    font-weight: lighter;
+    font-size: 30px;
+    margin-bottom: 60px;
+  }
+  .btn{
+    padding: 15px 32px;
+    margin-top: 20px;
+    border: none;
+    width: 280px;
+  }
+  .banner-btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+}
