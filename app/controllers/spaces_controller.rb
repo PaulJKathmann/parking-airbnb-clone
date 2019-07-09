@@ -7,8 +7,8 @@ class SpacesController < ApplicationController
   end
 
   def show
-    @space = Space.find(params[:id])
-    authorize @space
+    @spaces = policy_scope(Space).order(created_at: :desc)
+    authorize @spaces
   end
 
   def create
