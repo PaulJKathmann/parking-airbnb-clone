@@ -1,2 +1,93 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<%= content_for(:navbar_class, "navbar_home") %>
+
+<div class="banner">
+  <div class="banner-content text-center">
+    <h1>Parking dog</h1>
+    <h3>parking dog let you rent out private parking spaces arround the city</h3>
+    <div class="banner-btn">
+      <%= link_to "Find a Space", root_path, class: "btn btn-lg btn-primary"  %>
+      <%= link_to "Share your space", root_path, class: "btn btn-lg btn-primary"  %>
+    </div>
+
+  </div>
+</div>
+
+<div class="container search-bar">
+  <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+  </div>
+</div>
+
+<div class="container">
+  <div class="container home-outer-container">
+    <h3>get the best parking space in the city at the right price</h3>
+    <div class="container home-inner-container">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1537888691430-8ace3715492e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text"><strong>search for the best locations</strong></p>
+          <p>
+            find perfect location in the city.
+          </p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1555582467-bc8792666232?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text"><strong>rent from private owners</strong></p>
+          <p class="card-text">
+            parking in the street is not cool. go for a private parking space.
+          </p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1519669072050-a51e9a929312?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=740&q=80" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text"><strong>flexible dates</strong></p>
+          <p class="card-text">choose only the days that you need a parking space</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="container home-outer-container">
+    <h3>get the best parking space in the city at the right price</h3>
+    <div class="container home-inner-container">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1542353436-312f0e1f67ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=854&q=80" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text"><strong>make extra money</strong></p>
+          <p class="card-text">
+            if you have a space available why not rent it and make extra money!
+          </p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1498887960847-2a5e46312788?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text"><strong>rent from private clients</strong></p>
+          <p class="card-text">
+            rent to people signed up in our platform
+          </p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src= "https://images.unsplash.com/photo-1519669072050-a51e9a929312?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=740&q=80">
+        <div class="card-body">
+          <p class="card-text"><strong>flexible dates</strong></p>
+          <p class="card-text">
+            block the dates that you need your parking space
+          </p>
+        </div>
+      </div>
+    </div>
+    <%= link_to "share a space", root_path, class: "btn btn-lg btn-primary"  %>
+  </div>
+</div>
