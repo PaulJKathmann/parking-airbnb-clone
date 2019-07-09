@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   resources :spaces
-  get 'bookings/index'
-  get 'bookings/show'
-  get 'bookings/new'
-  get 'bookings/create'
-  get 'bookings/update'
-  get 'bookings/edit'
+
+  resources :bookings
 
   devise_for :users
   root to: 'pages#home'
