@@ -9,11 +9,20 @@ class SpacesController < ApplicationController
   def show
   end
 
-  def create
+  def new
+    @space = Space.new
+    authorize @space
   end
 
-  def new
+  def create
+    @space = Space.new(space_params)
+    @space.user = current_user
     authorize @space
+    if @space.save
+      redirect_to spaces_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -23,5 +32,11 @@ class SpacesController < ApplicationController
   end
 
   def update
+  end
+
+  private
+
+  def space_params
+    params.require(:space).permit(:address, :start_date, :end_date, :price, :size, :photo, :photo_cache)
   end
 end

@@ -1,0 +1,16 @@
+
+.button {
+ background-color:#02CCBA;
+ color:#white;
+ border-radius:16px;
+ text-decoration:none;
+ font-family: $body-font;
+ font-weight:bold;
+ text-align:center;
+ border: none;
+ padding: 8px 16px;
+}
+
+.button:hover {
+  background-color:#3EE7D8;
+}
