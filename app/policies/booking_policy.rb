@@ -9,6 +9,10 @@ class BookingPolicy < ApplicationPolicy
     return true
   end
 
+  def show?
+    user_is_owner_or_admin?
+  end
+
   def update?
     record.user == user
     # - record: the restaurant passed to the `authorize` method in controller
@@ -17,5 +21,11 @@ class BookingPolicy < ApplicationPolicy
 
   def destroy?
     record.user == user
+  end
+
+  private
+
+  def user_is_owner_or_admin?
+    record.user == user || user.admin
   end
 end
