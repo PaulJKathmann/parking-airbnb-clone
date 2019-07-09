@@ -7,11 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #<User id: 1, email: "cc0-11@outlook.de", created_at: "2019-07-09 10:08:52", updated_at: "2019-07-09 10:08:52", admin: nil>
-puts "cleaning db..."
-Space.destroy_all
-User.destroy_all
-puts "creating one user, email cc0-11@outlook.de, password: test123"
-curr_user = User.create!(email: "cc0-11@outlook.de", password: "test123")
+
+puts "creating one user, email test@outlook.de, password: test123"
+curr_user = User.create!(email: "test@outlook.de", password: "test123")
 puts "created user!"
 
 puts "create 3 spaces put by this user"
