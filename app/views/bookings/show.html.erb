@@ -5,13 +5,38 @@
   <title>My booking details</title>
 </head>
 <body>
-<div class="container px-md-5 ">
-  <div ><h2 class="font-weight-bold">Your Next booking</h2></div>
+<div class="container ">
+  <div ><h2 class="font-weight-bold">Your Next booking....</h2></div>
 
-  <div class="d-flex"></div>
-  <div>dd</div>
+  <div class="d-flex">
+
+  <div class="card" style="width: 36rem;">
+  <img src="https://unsplash.com/photos/sk1y2TOQ-7E" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">Address:<%=@booking.space.address%></h5>
+    <div class="d-flex justify-content-between">
+    <p class="card-text">Status:<%=@booking.status%></p>
+    <p class="card-text">Cost:<%=@booking.cost%>Euro</p>
+   </div>
+
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">From <%=@booking.start_date%></li>
+    <li class="list-group-item">To   <%=@booking.end_date%></li>
+    <li class="list-group-item">Size:<%=@booking.space.size%></li>
+    <li class="list-group-item">Contact: <%=@booking.user.email%></li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+  </div>
+
   <div>uu</div>
   <div>ddfdsfas</div>
+
+ </div>
+
 </div>
 </body>
 </html>
