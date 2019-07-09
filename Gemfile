@@ -28,5 +28,8 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
-# add devise gem manually
+# add devise gem manually for signin and signup
 gem 'devise'
+# add pundit for authorization
+gem 'pundit'
+

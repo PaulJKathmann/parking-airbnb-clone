@@ -3,6 +3,7 @@ class SpacesController < ApplicationController
   #if a method is written here you DO NOT NEED TO LOG IN to call it!
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
+    @spaces = policy_scope(Space).order(created_at: :desc)
   end
 
   def show
@@ -12,6 +13,7 @@ class SpacesController < ApplicationController
   end
 
   def new
+    authorize @space
   end
 
   def destroy
