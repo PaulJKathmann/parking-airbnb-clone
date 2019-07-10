@@ -10,29 +10,27 @@
 
   <div class="d-flex">
 
-  <div class="card" style="width: 36rem;">
-  <img src="https://unsplash.com/photos/sk1y2TOQ-7E" class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title">Address:<%=@booking.space.address%></h5>
-    <div class="d-flex justify-content-between">
-    <p class="card-text">Status:<%=@booking.status%></p>
-    <p class="card-text">Cost:<%=@booking.cost%>Euro</p>
-   </div>
+  <div class="card bg-dark text-white">
+  <img src="https://source.unsplash.com/random" class="card-img" style="height: 500px;width: 350px;">  <div class="card-img-overlay d-flex">
+    <div style="padding-top: 300px;">
+    <h5 class="card-title"><%=@booking.space.address%></h5>
+    <p class="card-text">From <%=@booking.start_date%></p>
+    <p class="card-text">To   <%=@booking.end_date%></p>
+    <p class="card-text">Contact: <%=@booking.user.email%></p>
+    </div>
 
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">From <%=@booking.start_date%></li>
-    <li class="list-group-item">To   <%=@booking.end_date%></li>
-    <li class="list-group-item">Size:<%=@booking.space.size%></li>
-    <li class="list-group-item">Contact: <%=@booking.user.email%></li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <p class="card-text" style="padding-top: 440px;width:max-content;">Total:<%=@booking.cost%>Euro</p>
   </div>
   </div>
 
-  <div>uu</div>
+  <div class="card" style="width: 18rem;">
+  <img src="https://source.unsplash.com/random" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%=@booking.user.email %></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
   <div>ddfdsfas</div>
 
  </div>
