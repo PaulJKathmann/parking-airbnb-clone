@@ -40,7 +40,8 @@
 
    <div>
     <p class="card-text">Total: <%= booking.cost %> €</p>
-    <a href="#" class="button"> Go to this booking</a>
+    <%= link_to "Go to this booking", booking_path(booking), class: "button" %>
+    <!-- <a href="" class="button"> Go to this booking</a> -->
     </div>
   </div>
   </div>
