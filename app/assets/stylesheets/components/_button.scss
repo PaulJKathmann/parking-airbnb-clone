@@ -1,16 +1,17 @@
 
 .button {
- background-color:#02CCBA;
- color: #white;
- border-radius:16px;
- text-decoration:none;
- font-family: $body-font;
- font-weight:bold;
- text-align:center;
- border: none;
+ background-color:$tgreen;
+ color: white;
  padding: 8px 16px;
+ font-family: $body-font;
+ text-align:center;
+ border-radius: 4px;
+ transition: 0.4s;
 }
 
 .button:hover {
-  background-color:#3EE7D8;
+  background-color:$dgreen;
+  text-decoration:none;
+  color: white;
 }
+
