@@ -1,0 +1,5 @@
+<% @bookings.each do |booking| %>
+  <%# if booking.start_date == time.now equal day update condition %>
+  <%= render "past_bookings", locals: { booking: booking }  %>
+  <%# end %>
+<% end %>
