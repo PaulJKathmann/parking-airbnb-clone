@@ -12,8 +12,8 @@
 
           <div class="card-body" >
             <h5 class="card-title"><%= space.address %></h5>
-            <p class="card-text"><%= space.price %></p>
-            <p class="card-text"><%= space.size %></p>
+            <p class="card-text">Price: <%= space.price %> euro</p>
+            <p class="card-text">Size: <%= space.size %> m^2</p>
             <%= link_to "show more", space_path(space) %>
           </div>
         </div>
