@@ -4,6 +4,12 @@ class SpacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @spaces = policy_scope(Space).order(created_at: :desc)
+
+    @markers = @spaces.map do |space|
+      {
+        lat: space.latitude,
+        lng: space.longitude
+      }
   end
 
   def show

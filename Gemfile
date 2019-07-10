@@ -35,4 +35,5 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
-
+# add geocoder gem
+  gem 'geocoder'
