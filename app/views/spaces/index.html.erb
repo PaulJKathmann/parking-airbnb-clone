@@ -1,20 +1,21 @@
 <div class="container d-flex flex-row" >
   <div class="index-cards" >
-    <div class="container" >
-      <p><%= search_field_tag 'city' %></p>
+      <div class="search-bar m-0">
+        <%= search_field_tag "browse city", nil  , class: "bar form-control", placeholder: "Berlin", style: "width: 270px;" %>
+        <%= link_to "Browse city", spaces_path, class: "button ml-2"  %>
     </div>
     <div class="cards-container">
       <% @spaces.each do  |space| %>
-        <div class="card inline-flex" style="width: 400px; flex-direction: row" >
+        <div class="card mb-1" style="width: 400px; flex-direction: row; padding: 10px;" >
         <%  if space.photo %>
          <%= cl_image_tag(space.photo, width: 160, height: 160, crop: :fill) %>
         <% end  %>
 
           <div class="card-body" >
-            <h5 class="card-title"><%= space.address %></h5>
-            <p class="card-text">Price: <%= space.price %> euro</p>
-            <p class="card-text">Size: <%= space.size %> m^2</p>
-            <%= link_to "show more", space_path(space) %>
+            <h5 class="card-title" style="margin: 0; padding: 0;"><%= space.address %></h5>
+            <p class="card-text" style="margin: 0; padding: 0;">Price: <%= space.price %> euro</p>
+            <p class="card-text mb-2" style="margin: 0; padding: 0;">Size: <%= space.size %> m^2</p>
+            <%= link_to "show more", space_path(space), class: "button" %>
           </div>
         </div>
       <% end %>
@@ -22,6 +23,6 @@
     </div>
   </div>
   <div class="map flex-grow-1">
-    <p>place the map in this div</p>
+    <%= cl_image_tag("map_light_space_index_yh37sr.png", style: "width: 100%; margin-top: 50px; position: sticky; top: 0;") %>
   </div>
 </div>
