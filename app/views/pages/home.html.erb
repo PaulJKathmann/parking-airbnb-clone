@@ -5,20 +5,16 @@
     <h1>Parking dog</h1>
     <h3>parking dog let you rent out private parking spaces arround the city</h3>
     <div class="banner-btn">
-      <%= link_to "Find a Space", root_path, class: "btn btn-lg btn-primary"  %>
-      <%= link_to "Share your space", root_path, class: "btn btn-lg btn-primary"  %>
+      <%= link_to "Find a Space", spaces_path, class: "button"  %>
+      <%= link_to "Share your space", new_space_path, class: "button"  %>
     </div>
 
   </div>
 </div>
 
 <div class="container search-bar">
-  <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
-      </div>
-      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-  </div>
+  <%= search_field_tag "browse city", nil  , class: "bar" %>
+  <%= link_to "Find a Space", spaces_path, class: "button"  %>
 </div>
 
 <div class="container">
