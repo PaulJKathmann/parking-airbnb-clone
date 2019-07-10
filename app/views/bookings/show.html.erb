@@ -5,13 +5,36 @@
   <title>My booking details</title>
 </head>
 <body>
-<div class="container px-md-5 ">
-  <div ><h2 class="font-weight-bold">Your Next booking</h2></div>
+<div class="container ">
+  <div class = "my-2" ><h2 class="font-weight-bold">You Booking on <%=@booking.start_date.to_date%></h2></div>
 
-  <div class="d-flex"></div>
-  <div>dd</div>
-  <div>uu</div>
-  <div>ddfdsfas</div>
+  <div class="d-flex">
+
+  <div class="card bg-dark text-white mx-3" style="width:60%;border-style: none;">
+  <img src="https://source.unsplash.com/random" class="card-img" style="height:600px;">
+   <div class="card-img-overlay d-flex  justify-content-between">
+    <div style="padding-top: 425px;">
+    <h5 class="card-title"><%=@booking.space.address%></h5>
+    <p class="card-text">From: <%=@booking.start_date%></p>
+    <p class="card-text">To:   <%=@booking.end_date%></p>
+    <p class="card-text">Contact: <%=@booking.user.email%></p>
+    </div>
+
+    <p class="card-text" style="padding-top:500px;width:max-content;"><strong>Total:<%=@booking.cost%> Euro</strong></p>
+  </div>
+  </div>
+
+  <div class="card" style="width: 40%;">
+  <div class="card-body" style = "text-align:center; margin-top: 100px;">
+    <img class="rounded-circle alone my-5" src="https://avatars0.githubusercontent.com/u/50922534?v=4" width="85">
+    <h5 class="card-title"><%=@booking.space.user.email%></h5>
+    <p class="card-text">on Parking Dog since: </p>
+    <p> <%=@booking.space.user.created_at.to_date%></p>
+  </div>
+ </div>
+
+
+</div>
 </div>
 </body>
 </html>
