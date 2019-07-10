@@ -1,9 +1,10 @@
 <%= content_for(:navbar_class, "navbar_home") %>
 
+<%= cl_image_tag("map-dark-berlin_en6ctp.png", class: "banner-img") %>
 <div class="banner">
   <div class="banner-content text-center">
     <h1>Parking dog</h1>
-    <h3>parking dog let you rent out private parking spaces arround the city</h3>
+    <h3 class="mb-3" style="color: rgba(245,245,245,.9);">Rent private parking spaces in the city</h3>
     <div class="banner-btn">
       <%= link_to "Find a Space", spaces_path, class: "button"  %>
       <%= link_to "Share your space", new_space_path, class: "button"  %>
@@ -12,9 +13,9 @@
   </div>
 </div>
 
-<div class="container search-bar">
-  <%= search_field_tag "browse city", nil  , class: "bar" %>
-  <%= link_to "Find a Space", spaces_path, class: "button"  %>
+<div class="container search-bar col-6">
+  <%= search_field_tag "browse city", nil  , class: "bar form-control", placeholder: "Berlin" %>
+  <%= link_to "Browse city", spaces_path, class: "button ml-2"  %>
 </div>
 
 <div class="container">
