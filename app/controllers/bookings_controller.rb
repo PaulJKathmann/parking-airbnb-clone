@@ -4,7 +4,8 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = policy_scope(Booking)
+    @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def new
