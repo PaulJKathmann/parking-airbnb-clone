@@ -10,11 +10,11 @@
 
   <div class="d-flex">
 
-  <div class="card bg-dark text-white mx-3" style="width:60%;">
+  <div class="card bg-dark text-white mx-3" style="width:60%;border-style: none;">
   <img src="https://source.unsplash.com/random" class="card-img" style="height:600px;">
    <div class="card-img-overlay d-flex  justify-content-between">
     <div style="padding-top: 425px;">
-    <p class="card-title"><%=@booking.space.address%></>
+    <h5 class="card-title"><%=@booking.space.address%></h5>
     <p class="card-text">From: <%=@booking.start_date%></p>
     <p class="card-text">To:   <%=@booking.end_date%></p>
     <p class="card-text">Contact: <%=@booking.user.email%></p>
