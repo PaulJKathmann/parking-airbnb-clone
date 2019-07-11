@@ -32,7 +32,7 @@ class SpacesController < ApplicationController
     @space.user = current_user
     authorize @space
     if @space.save
-      redirect_to spaces_path
+      redirect_to space_path(@space)
     else
       render :new
     end
