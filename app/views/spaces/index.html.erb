@@ -4,36 +4,46 @@
 
     <div class="index-cards mr-5" >
        <div class="search-bar m-0 w-10">
-        <%= form_tag spaces_path, method: :get, class: "d-flex" do %>
+        <%= form_tag spaces_path, method: :get, class: "d-flex search-bar" do %>
         <%= text_field_tag :query,
             params[:query],
             class: "form-control ",
             placeholder: "Find a parking space" %>
-         <%= submit_tag "Search",class: "button" %>
+         <%= submit_tag "Search",class: "button ml-2" %>
         <% end %>
        </div>
-       <div class="cards-container overflow-auto">
+       <div class="cards-container overflow-auto" style="margin-bottom: 50px;">
          <% @spaces.each do  |space| %>
-           <div class="card mb-1 justify-content-between" style="width: 400px; flex-direction: row; padding: 10px;" >
+          <%= link_to space_path(space) do %>
+           <div class="card mb-1 justify-content-between card-link"
+           style="width: 400px; flex-direction: row; padding: 10px;" >
              <%  if space.photo %>
              <%= cl_image_tag(space.photo, width: 160, height: 160, crop: :fill) %>
              <% end  %>
 
             <div class="card-body my-3 mr-0" >
-              <h5 id = "title_index"class="card-title" style="margin: 0; padding: 0;"><%= link_to space.address, space_path(space), class: "link" %></h5>
-              <p class="card-text" style="margin: 0; padding: 0;">Price: <%= space.price %> euro</p>
-              <p class="card-text mb-2" style="margin: 0; padding: 0;">Size: <%= space.size %></p>
+              <h5 id = "title_index" class="card-title link" style="margin: 0; padding: 0; color: #02CCBA;"><%= space.address %></h5>
+              <p class="card-text" style="margin: 0; padding: 0; color: black;">Price: <%= space.price %> euro</p>
+              <p class="card-text mb-2" style="margin: 0; padding: 0; color: black;">Size: <%= space.size %></p>
             </div>
            </div>
+           <% end %>
          <% end %>
       </div>
   </div>
 
-    <div class="map flex-grow-1" style="margin-top: 56px;">
-      <div id="map" style="width: 100%; height: 100%;"
+    <div class="map flex-grow-1" style="margin-top: 56px; margin-bottom: 30px;">
+      <% if @spaces.count <= 2 %>
+      <div id="map" style="width: 100%; height: 60vh; min-width: 500px; position: sticky; top: 0;"
          data-markers="<%= @markers.to_json %>"
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
+      <% else %>
+      <div id="map" style="width: 100%; height: 100vh; min-width: 500px; position: sticky; top: 0;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <% end %>
     </div>
 
   </div>

@@ -4,7 +4,7 @@ class SpacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     if params[:query].present?
-      @spaces = policy_scope(Space).where.not(latitude: nil, longitude: nil).where("address ILIKE ?", "%#{params[:query]}%")
+      @spaces = policy_scope(Space).where.not(latitude: nil, longitude: nil, user: current_user).where("address ILIKE ?", "%#{params[:query]}%")
       @markers = @spaces.map do |space|
       {
         lat: space.latitude,
@@ -12,7 +12,13 @@ class SpacesController < ApplicationController
       }
       end
     else
-      @spaces = policy_scope(Space).where.not(latitude: nil, longitude: nil)
+      @spaces = policy_scope(Space).where.not(latitude: nil, longitude: nil, user: current_user)
+      @markers = @spaces.map do |space|
+      {
+        lat: space.latitude,
+        lng: space.longitude,
+      }
+      end
     end
 
   end
