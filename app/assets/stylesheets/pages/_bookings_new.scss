@@ -1,1 +1,14 @@
+.space-photo {
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
+}
 
+.changecost {
+  font-weight: bold;
+  font-size: 28px;
+  color: $tgreen;
+  // transition: 1s;
+}
+
+.cost {
+  color: black;
+}
