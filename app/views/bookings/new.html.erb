@@ -12,7 +12,7 @@
           <p class="card-text">Size: <%= @space.size%></p>
          </div>
          <div class="flex-column justify-content-between">
-          <h3 class="card-text">Price/Day: <%= @space.price %> Euro</h3>
+          <h3 class="card-text">Price/Day: <span id="daily-price"><%= @space.price %> </span>€</h3>
           </div>
         </div>
       </div>
@@ -21,12 +21,12 @@
   <div class="card">
     <p class="text-center">Pick your timeframe:</p>
     <%= simple_form_for([@space, @booking]) do |f| %>
-      <div class="row">
+      <div class="row" id="date-picker">
         <div class="col">
-          <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id: "start_date"} %>
         </div>
         <div class="col">
-          <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "end_date"} %>
         </div>
       </div>
   </div>
@@ -39,7 +39,7 @@
           <p>CVC: 084</p>
         </div>
         <div class="cost">
-          <h3>Cost: <%= @space.price %>€</h3>
+          <h3>Total Cost: <span id="total-cost"><%= @space.price %></span><span>€</span></h3>
         </div>
       </div>
     </div>
@@ -48,3 +48,6 @@
     </div>
     <% end %>
 </div>
+<%= javascript_pack_tag "calculation" %>
+
+
