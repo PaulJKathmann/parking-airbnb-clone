@@ -3,7 +3,8 @@ class Booking < ApplicationRecord
   belongs_to :space
   validates :start_date, presence: true, if: :overlap?
   validates :end_date, presence: true, if: :overlap?
-
+  validates :status, presence: true
+  validates :cost, presence: true
 
   # Valdiation that dates fit
   def overlap?
