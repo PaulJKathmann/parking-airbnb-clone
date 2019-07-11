@@ -2,12 +2,23 @@
 <% count = 0 %>
 
 <% @bookings.each do |booking| %>
-  <% if booking.start_date > Date.parse(Time.now.strftime('%Y/%m/%d')) || booking.end_date < Date.parse(Time.now.strftime('%Y/%m/%d')) %>
+  <% if booking.start_date < Date.parse(Time.now.strftime('%Y/%m/%d')) && booking.end_date > Date.parse(Time.now.strftime('%Y/%m/%d')) %>
     <% if booking.status == "confirmed" %>
       <% count =+ 1 %>
       <div class="card">
         <div class="card-header bg-success">
           <h6 class="my-0" style= "height: 16px;"> Status: <%=booking.status%></h6>
+        </div>
+        <div class="card-body d-flex justify-content-between">
+          <div>
+            <h5 class="card-title">Address: <%=booking.space.address%></h5>
+            <p class="card-text">From <%=booking.start_date%>  To  <%=booking.end_date%></p>
+            <p class="card-text"> Size: <%=booking.space.size%> m²</p>
+           </div>
+          <div>
+            <p class="card-text">Total: <%= booking.cost %> €</p>
+            <%= link_to "Go to this booking", booking_path(booking), class: "button" %>
+          </div>
         </div>
       </div>
     <% end %>
