@@ -7,83 +7,90 @@
     <h3 class="mb-3" style="color: rgba(245,245,245,.9);">Rent private parking spaces in the city</h3>
     <div class="banner-btn">
       <%= link_to "Find a Space", spaces_path, class: "button"  %>
-      <%= link_to "Share your space", new_space_path, class: "button"  %>
+      <%= link_to "Rent out your space", new_space_path, class: "button"  %>
     </div>
-
   </div>
 </div>
 
-<div class="container search-bar col-6">
+<div class="container search-bar col-6 py-5">
   <%= search_field_tag "browse city", nil  , class: "bar form-control", placeholder: "Berlin" %>
   <%= link_to "Browse city", spaces_path, class: "button ml-2"  %>
 </div>
 
 <div class="container">
   <div class="container home-outer-container">
-    <h3>get the best parking space in the city at the right price</h3>
+    <h3 class="text-center pb-3">Get the best parking space in the city at the right price</h3>
     <div class="container home-inner-container">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1537888691430-8ace3715492e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text"><strong>search for the best locations</strong></p>
-          <p>
-            find perfect location in the city.
-          </p>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1555582467-bc8792666232?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text"><strong>rent from private owners</strong></p>
+      <div class="home-card">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1559564484-e48b3e040ff4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80" alt="Card image cap">
+        <div>
+          <h5 class="card-header">Search for the best locations</h5>
           <p class="card-text">
-            parking in the street is not cool. go for a private parking space.
+            Find your perfect parking location in the city.
           </p>
         </div>
       </div>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1519669072050-a51e9a929312?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=740&q=80" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text"><strong>flexible dates</strong></p>
-          <p class="card-text">choose only the days that you need a parking space</p>
+      <div class="home-card" style="width: 18rem;">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1555582467-bc8792666232?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" alt="Card image cap">
+        <div>
+          <p class="card-header">Rent from private owners</p>
+          <p class="card-text">
+            Parking in the street is not cool. Go for a private parking space.
+          </p>
+        </div>
+      </div>
+      <div class="home-card" style="width: 18rem;">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=80" alt="Card image cap">
+        <div>
+          <p class="card-header">Flexible dates</p>
+          <p class="card-text">Choose only the days that you need a parking space</p>
         </div>
       </div>
     </div>
-
+    <div class="text-center">
+      <%= link_to "Book a space", root_path, class: "button"  %>
+    </div>
+    <hr>
   </div>
+
 </div>
+
+
 
 <div class="container">
   <div class="container home-outer-container">
-    <h3>get the best parking space in the city at the right price</h3>
+    <h3 class="text-center pb-3">Rent out your parking space and make money on the side</h3>
     <div class="container home-inner-container">
-      <div class="card" style="width: 18rem;">
+      <div class="home-card" style="width: 18rem;">
         <img class="card-img-top" src="https://images.unsplash.com/photo-1542353436-312f0e1f67ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=854&q=80" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text"><strong>make extra money</strong></p>
+        <div>
+          <p class="card-header">Make extra money</p>
           <p class="card-text">
-            if you have a space available why not rent it and make extra money!
+            If you have a space available why not rent it and make extra money!
           </p>
         </div>
       </div>
-      <div class="card" style="width: 18rem;">
+      <div class="home-card" style="width: 18rem;">
         <img class="card-img-top" src="https://images.unsplash.com/photo-1498887960847-2a5e46312788?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text"><strong>rent from private clients</strong></p>
+        <div>
+          <p class="card-header">Rent from private clients</p>
           <p class="card-text">
-            rent to people signed up in our platform
+            Rent to people signed up in our platform
           </p>
         </div>
       </div>
-      <div class="card" style="width: 18rem;">
+      <div class="home-card" style="width: 18rem;">
         <img class="card-img-top" src= "https://images.unsplash.com/photo-1519669072050-a51e9a929312?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=740&q=80">
-        <div class="card-body">
-          <p class="card-text"><strong>flexible dates</strong></p>
+        <div>
+          <p class="card-header">Flexible dates</p>
           <p class="card-text">
-            block the dates that you need your parking space
+            Block the dates that you need your parking space
           </p>
         </div>
       </div>
     </div>
-    <%= link_to "share a space", root_path, class: "btn btn-lg btn-primary"  %>
+    <div class="text-center">
+      <%= link_to "Rent our your space", root_path, class: "button"  %>
+    </div>
   </div>
 </div>
