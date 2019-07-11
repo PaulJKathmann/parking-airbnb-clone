@@ -1,5 +1,11 @@
 <% @bookings.each do |booking| %>
-  <%# if booking.start_date == time.now equal day update condition %>
-  <%= render "display_bookings", locals: { booking: booking }  %>
-  <%# end %>
+  <% if booking.start_date > Date.parse(Time.now.strftime('%Y/%m/%d')) || booking.end_date < Date.parse(Time.now.strftime('%Y/%m/%d')) %>
+    <% if booking.status == "confirmed" %>
+      <div class="card">
+        <div class="card-header bg-success">
+          <h6 class="my-0" style= "height: 16px;"> Status: <%=booking.status%></h6>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 <% end %>

@@ -15,7 +15,7 @@
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <%= render "upcomming_bookings"  %>
+      <%= render "future_bookings"  %>
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <%= render "current_bookings"  %>
@@ -23,12 +23,11 @@
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
       <%= render "past_bookings"  %>
     </div>
-      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
         <h1>
-          change this to the spaces index user id.
+          <%= render "my_spaces"  %>
         </h1>
-
-      </div>
+    </div>
   </div>
 </div>
 
