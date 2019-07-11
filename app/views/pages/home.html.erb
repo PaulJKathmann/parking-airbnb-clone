@@ -17,12 +17,12 @@
   <!-- <%= search_field_tag "browse city", nil  , class: "bar form-control", placeholder: "Berlin" %> -->
   <!-- <%= link_to "Browse city", spaces_path, class: "button ml-2"  %> -->
     <div class="search-bar m-0 w-10">
-        <%= form_tag spaces_path, method: :get, class: "d-flex" do %>
+        <%= form_tag spaces_path, method: :get, class: "d-flex search-form" do %>
         <%= text_field_tag :query,
             params[:query],
             class: "form-control ",
             placeholder: "Find a parking space" %>
-         <%= submit_tag "Search",class: "button ml-2" %>
+         <%= submit_tag "Search",class: "button ml-2", style %>
         <% end %>
     </div>
 </div>
