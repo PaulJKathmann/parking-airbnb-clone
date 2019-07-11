@@ -8,12 +8,12 @@
 
 h1 {
   font-size: 40px;
-  font-family: $headers-font
+  font-family: $headers-font;
 }
 
 h2 {
   font-size: 32px;
-  font-family: $headers-font
+  font-family: $headers-font;
 }
 
 h3 {
@@ -22,3 +22,16 @@ h3 {
   color: rgba(0,0,0,0.6);
 }
 
+#title_index {
+  font-family: $headers-font;
+  color:black;
+  font-weight: bold;
+  :hover{
+  color:$dgreen;
+  text-decoration: none;
+  }
+}
+
+.link{
+  color:$tgreen;
+}
