@@ -18,6 +18,10 @@ class BookingsController < ApplicationController
     @space = Space.find(params[:space_id])
     @booking = Booking.new(space: @space)
     authorize @booking
+    respond_to do |format|
+      format.js { render layout: false, content_type: 'text/javascript' }
+      format.html
+    end
   end
 
   def create
@@ -26,6 +30,8 @@ class BookingsController < ApplicationController
     @booking.space = @space
     @booking.user = current_user
     authorize @booking
+    @total_cost = @space.price * (@booking.end_date - @booking.start_date)
+    @booking.cost = @total_cost
     if @booking.save
       redirect_to bookings_path
     else
