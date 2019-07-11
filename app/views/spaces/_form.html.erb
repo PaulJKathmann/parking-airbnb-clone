@@ -1,22 +1,19 @@
 <%= simple_form_for(@space) do |f| %>
   <div class="form-group">
-    <%= f.label :address %>
-    <%= f.text_field :address, class: 'form-control' %>
+    <%= f.input :address, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :size %>
-    <%= f.text_field :size, class: 'form-control', placeholder: "m²" %>
+    <%= f.input :size, class: 'form-control', placeholder: "m²" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :price %>
-    <%= f.text_field :price, class: 'form-control', placeholder: "€ per day" %>
+    <%= f.input :price, class: 'form-control', placeholder: "€ per day" %>
   </div>
 
   <div class="row">
     <div class="col">
-      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"}, error: 'Dates in wrong order!' %>
     </div>
     <div class="col">
       <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
