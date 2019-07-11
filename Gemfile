@@ -35,12 +35,8 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
-<<<<<<< HEAD
-# add geocoder gem
-  gem 'geocoder'
-=======
 # for maps
 gem 'geocoder'
 
 
->>>>>>> 37c9cef52307f0e6db4d9cb720f8f737004510b3
+

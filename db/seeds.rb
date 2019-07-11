@@ -8,8 +8,8 @@
 
 #<User id: 1, email: "cc0-11@outlook.de", created_at: "2019-07-09 10:08:52", updated_at: "2019-07-09 10:08:52", admin: nil>
 puts "!delete all bookings/spaces/users manually, if you've already used seeds before!"
-puts " creating user1, email test@outlook.de, password: test123"
-user1 = User.create!(email: "test@outlook.de", password: "test123")
+puts " creating user1, email test1@outlook.de, password: test123"
+user1 = User.create!(email: "test1@outlook.de", password: "test123")
 puts "created user1!"
 
 puts " create 3 spaces uploaded by this user1"
@@ -48,8 +48,8 @@ space3.user = user1
 space3.save!
 puts "saved third space for user1"
 
-puts " creating user2, email test2@outlook.de, password: test222"
-user2 = User.create!(email: "test2@outlook.de", password: "test222")
+puts " creating user2, email test21@outlook.de, password: test222"
+user2 = User.create!(email: "test21@outlook.de", password: "test222")
 puts "created user2!"
 
 puts "create 1 space uploaded by this user2"

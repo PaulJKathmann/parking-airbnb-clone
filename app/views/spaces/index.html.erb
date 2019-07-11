@@ -23,7 +23,6 @@
     </div>
   </div>
   <div class="map flex-grow-1">
- <!--    <%= cl_image_tag("map_light_space_index_yh37sr.png", style: "width: 100%; margin-top: 50px; position: sticky; top: 0;") %> -->
     <div id="map" style="width: 100%; height: 600px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
