@@ -11,7 +11,7 @@
   <div class="d-flex">
 
   <div class="card bg-dark text-white mx-3" style="width:60%;border-style: none;">
-  <img src="https://source.unsplash.com/random" class="card-img" style="height:600px;">
+  <%= cl_image_tag("map-dark-berlin_en6ctp.png", style: "height: 600px; object-fit: cover;", class: "card-img") %>
    <div class="card-img-overlay d-flex  justify-content-between">
     <div style="padding-top: 425px;">
     <h5 class="card-title"><%=@booking.space.address%></h5>
