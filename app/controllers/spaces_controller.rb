@@ -14,11 +14,17 @@ class SpacesController < ApplicationController
     else
       @spaces = policy_scope(Space).where.not(latitude: nil, longitude: nil)
     end
+    raise
 
   end
 
   def show
     @space = Space.find(params[:id])
+    @markers =
+      [{
+        lat: @space.latitude,
+        lng: @space.longitude,
+      }]
     authorize @space
   end
 
