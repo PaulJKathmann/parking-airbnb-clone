@@ -48,8 +48,7 @@
  <% end %>
 
   <h1 class ="my-4"->My Spaces</h1>
-  <% @my_spaces.each do |space| %>
-  <% booking = space[0] %>
+  <% @spaces.each do |booking| %>
   <% if booking.status == "pending" %>
     <div class="border my-5">
       <div class="card-header bg-warning">
