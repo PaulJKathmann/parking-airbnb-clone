@@ -14,8 +14,6 @@ class SpacesController < ApplicationController
     else
       @spaces = policy_scope(Space).where.not(latitude: nil, longitude: nil)
     end
-    raise
-
   end
 
   def show
