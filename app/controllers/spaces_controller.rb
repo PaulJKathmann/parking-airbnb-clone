@@ -10,7 +10,7 @@ class SpacesController < ApplicationController
       {
         lat: space.latitude,
         lng: space.longitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { space: space })
+        # infoWindow: render_to_string(partial: "infowindow", locals: { space: space })
         # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
