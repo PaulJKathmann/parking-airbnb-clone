@@ -1,29 +1,29 @@
 <div class="container">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My future bookings</a>
+      <a class="nav-link active" id="future-tab" data-toggle="tab" href="#future" role="tab" aria-controls="future" aria-selected="true">My future bookings</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My current bookings</a>
+      <a class="nav-link" id="current-tab" data-toggle="tab" href="#current" role="tab" aria-controls="current" aria-selected="false">My current bookings</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">My booking history</a>
+      <a class="nav-link" id="past-tab" data-toggle="tab" href="#past" role="tab" aria-controls="past" aria-selected="false">My booking history</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Manage my parking spaces</a>
+      <a class="nav-link" id="manage_my_spaces-tab" data-toggle="tab" href="#manage_my_spaces" role="tab" aria-controls="manage_my_spaces" aria-selected="false">Manage my parking spaces</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade show active" id="future" role="tabpanel" aria-labelledby="future-tab">
       <%= render "future_bookings"  %>
     </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade" id="current" role="tabpanel" aria-labelledby="current-tab">
       <%= render "current_bookings"  %>
     </div>
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <div class="tab-pane fade" id="past" role="tabpanel" aria-labelledby="past-tab">
       <%= render "past_bookings"  %>
     </div>
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <div class="tab-pane fade" id="manage_my_spaces" role="tabpanel" aria-labelledby="manage_my_spaces-tab">
         <h1>
           <%= render "my_spaces"  %>
         </h1>

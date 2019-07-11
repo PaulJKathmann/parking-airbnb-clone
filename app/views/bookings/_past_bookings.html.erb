@@ -1,6 +1,8 @@
+<% count = 0 %>
 <% @bookings.each do |booking| %>
   <% if booking.end_date < Date.parse(Time.now.strftime('%Y/%m/%d'))%>
     <% if booking.status == "confirmed" %>
+    <% count =+ 1 %>
       <div class="card">
         <div class="card-header">
           <h6 class="my-0" style= "height: 16px;"> Status: <%=booking.status%></h6>
@@ -8,4 +10,12 @@
       </div>
     <% end %>
   <% end %>
+<% end %>
+<% if count == 0 %>
+  <div class="container">
+    <div class="container" style="justify-content: center;">
+      <p>you don't have confirmed past bookings</p>
+      <%= link_to "book a space", spaces_path, class: "button" %>
+    </div>
+  </div>
 <% end %>
