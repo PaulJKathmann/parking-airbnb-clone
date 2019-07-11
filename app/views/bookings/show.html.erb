@@ -8,12 +8,19 @@
 <div class="container ">
   <div class = "my-2" ><h2 class="font-weight-bold">You Booking on <%=@booking.start_date.to_date%></h2></div>
 
+<<<<<<< HEAD
 
 
 <div class="d-flex">
 
   <div class="card bg-dark text-white mx-3" style="width:60%;border-style: none;">
   <img src="assets/images/route1.png" class="card-img" style="height:600px;">
+=======
+  <div class="d-flex">
+
+  <div class="card bg-dark text-white mx-3" style="width:60%;border-style: none;">
+  <%= cl_image_tag("map-dark-berlin_en6ctp.png", style: "height: 600px; object-fit: cover;", class: "card-img") %>
+>>>>>>> 37c9cef52307f0e6db4d9cb720f8f737004510b3
    <div class="card-img-overlay d-flex  justify-content-between">
     <div style="padding-top: 425px;">
     <h5 class="card-title"><%=@booking.space.address%></h5>
