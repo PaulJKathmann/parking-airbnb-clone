@@ -17,7 +17,7 @@
            <div class="card mb-1 justify-content-between" style="width: 400px; flex-direction: row; padding: 10px;" >
              <%  if space.photo %>
              <%= cl_image_tag(space.photo, width: 160, height: 160, crop: :fill) %>
-             <% end  %>
+             <% end %>
 
             <div class="card-body my-3 mr-0" >
               <h5 id = "title_index"class="card-title" style="margin: 0; padding: 0;"><%= link_to space.address, space_path(space), class: "link" %></h5>
