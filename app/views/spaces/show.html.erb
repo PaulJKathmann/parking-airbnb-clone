@@ -35,8 +35,12 @@
               </div>
             <% end %>
             <% if @space.user == current_user && @space.bookings.empty? %>
-              <div style="margin-top: 40px;margin-left: 60px;">
+              <div style="margin-top: 40px;margin-left: 30px;">
                 <%= link_to "Edit", edit_space_path(@space), class: "button"%>
+                <%= link_to "Delete", space_path(@space),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "button" %>
+
               </div>
             <% end %>
           </div>

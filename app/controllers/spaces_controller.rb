@@ -50,12 +50,28 @@ class SpacesController < ApplicationController
   end
 
   def destroy
+    @space = Space.find(params[:id])
+    @space.user = current_user
+    authorize @space
+    @space.destroy
+    redirect_to bookings_path
   end
 
   def edit
+    @space = Space.find(params[:id])
+    @space.user = current_user
+    authorize @space
   end
 
   def update
+    @space = Space.find(params[:id])
+    @space.user = current_user
+    authorize @space
+    if @space.update(space_params)
+      redirect_to space_path(@space)
+    else
+      render :new
+    end
   end
 
   private
