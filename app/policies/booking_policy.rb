@@ -10,7 +10,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def show?
-    user_is_owner_or_admin?
+    user_is_owner_or_admin? || record.space.user == user
   end
 
   def update?
