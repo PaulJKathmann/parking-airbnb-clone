@@ -1,6 +1,6 @@
 <% count = 0 %>
 
-<% @bookings.each do |booking| %>
+<% bookings.each do |booking| %>
   <% count =+ 1 %>
   <% if booking.start_date > Date.parse(Time.now.strftime('%Y/%m/%d'))%>
     <div class="card">
