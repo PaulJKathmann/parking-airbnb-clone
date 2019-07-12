@@ -2,7 +2,7 @@
 <% count = 0 %>
 
 <% @bookings.each do |booking| %>
-  <% if booking.start_date < Date.parse(Time.now.strftime('%Y/%m/%d')) && booking.end_date > Date.parse(Time.now.strftime('%Y/%m/%d')) %>
+  <% if booking.start_date <= Date.parse(Time.now.strftime('%Y/%m/%d')) && booking.end_date >= Date.parse(Time.now.strftime('%Y/%m/%d')) %>
     <% if booking.status == "confirmed" %>
       <% count =+ 1 %>
       <div class="card">
