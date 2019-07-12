@@ -20,3 +20,13 @@
   background: none;
   color: rgba(0,0,0,0.8);
 }
+
+a:hover {
+  text-decoration: none;
+}
+
+.card-link:hover {
+  box-shadow: 0 0 3px rgba(0,0,0,.2);
+  position: relative;
+  top: -3px;
+}
