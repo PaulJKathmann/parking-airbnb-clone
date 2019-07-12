@@ -29,7 +29,7 @@
           <% space.bookings.each do |booking| %>
             <div class="card" style="padding: 0px; box-shadow: 0 0 0;">
               <% case booking.status
-                when "confirmed"
+                when "confirmed" || "accepted"
                   headerClass = "bg-success"
                 when "pending"
                   headerClass = "bg-warning"
@@ -46,10 +46,16 @@
                 <h5 class="card-title">Address: <%=booking.space.address%></h5>
                 <h5 class="card-text">From <%=booking.start_date%>  To  <%=booking.end_date%></h5>
                 <h5 class="card-text"> Size: <%=booking.space.size%> m²</h5>
+                  <h5>Total:  <%= booking.cost %> €</h5>
                 </div>
                 <div>
-                  <h5 class="card-text pb-1">Total:  <%= booking.cost %> €</h5>
-                  <%= link_to "Go to this booking", booking_path(booking), class: "button" %>
+                  <div class="row pt-4">
+                    <% if booking.status == "pending" || booking.status == "" %>
+                    <%= link_to "Accept", space_booking_path(booking.space, booking, status:"confirmed"), method: :patch, class: "button bg-success" %>
+                    <%= link_to "Reject", space_booking_path(booking.space, booking, status:"rejected"), method: :patch, class: "button bg-warning mr-2 ml-2" %>
+                    <% end %>
+                    <%= link_to "Go to this booking", booking_path(booking), class: "button" %>
+                  </div>
                 </div>
               </div>
             </div>
