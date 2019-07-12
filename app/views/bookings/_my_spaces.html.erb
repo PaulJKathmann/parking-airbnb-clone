@@ -1,0 +1,60 @@
+
+<% spaces = user.spaces  %>
+<% if spaces.empty? %>
+  <div class="container">
+    <div class="container" style="justify-content: center;">
+      <p>you have not uploaded any space</p>
+      <%= link_to "new space", new_space_path, class: "button" %>
+    </div>
+  </div>
+<% else %>
+  <div class="container pl-0">
+    <% user.spaces.each do  |space| %>
+      <div class="container pt-2 mb-3 pb-4" style="background-color: white;">
+        <div class="card mb-1 mt-3" style="flex-direction: row; padding: 10px;  border:none;" >
+          <%  if space.photo %>
+           <%= cl_image_tag(space.photo, width: 160, height: 160, crop: :fill) %>
+          <% end  %>
+
+          <div class="card-body " >
+            <h5 class="card-title" style="margin: 0; padding: 0;"><%= space.address %></h5>
+            <h5 class="card-text" style="margin: 0; padding: 0;">Price: <%= space.price %> euro</h5>
+            <h5 class="card-text mb-2" style="margin: 0; padding: 0;">Size: <%= space.size %> m^2</h5>
+            <%= link_to "Edit", space_path(space), class: "button h5" %>
+          </div>
+        </div>
+        <div class="container">
+          <% space.bookings.each do |booking| %>
+            <div class="card" style="padding: 0px">
+              <% case booking.status
+                when "confirmed"
+                  headerClass = "bg-success"
+                when "pending"
+                  headerClass = "bg-warning"
+                when "reject"
+                  headerClass = "bg-danger"
+                else
+                  headerClass = "bg-warning"
+              end %>
+              <div class="card-header <%= headerClass %>" style="padding: 4px;">
+                <h6 class="my-0" style= "height: 16px;"> Status: <%=booking.status%></h6>
+              </div>
+              <div class="card-body d-flex justify-content-between">
+                <div>
+                <h5 class="card-title">Address: <%=booking.space.address%></h5>
+                <h5 class="card-text">From <%=booking.start_date%>  To  <%=booking.end_date%></h5>
+                <h5 class="card-text"> Size: <%=booking.space.size%> m²</h5>
+                </div>
+                <div>
+                  <h5 class="card-text">Total:  <%= booking.cost %> €</h5>
+                      <%= link_to "Go to this booking", booking_path(booking), class: "button h5" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
