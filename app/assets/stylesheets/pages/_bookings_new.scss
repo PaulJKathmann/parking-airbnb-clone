@@ -1,1 +1,27 @@
+.space-photo {
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
+}
 
+.changecost {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.cost {
+  color: black;
+  margin-bottom: -28px;
+}
+
+.payment-input {
+  padding: 8px 16px;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.payment-method p {
+  margin-bottom: 12px;
+  margin-top: 16px;
+  color: rgba(0,0,0,0.5);
+}
