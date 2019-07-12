@@ -16,7 +16,7 @@ const  calculateTotalCost = (event) => {
   if (365 > days || days > 0) {
     totalCostField.innerHTML = days * dailyPrice;
     costView.classList.add("changecost");
-    setTimeout(togglefunc, 1500);
+    setTimeout(togglefunc, 250);
     // costView.classList.remove("changecost");
   };
 };

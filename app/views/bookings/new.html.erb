@@ -21,31 +21,41 @@
       </div>
     </div>
   </div>
-  <div class="card">
-    <p class="text-center">Pick your timeframe:</p>
-    <%= simple_form_for([@space, @booking]) do |f| %>
-      <div class="row" id="date-picker">
-        <div class="col">
-          <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id: "start_date"} %>
+  <div class="row justify-content-between mx-0">
+    <div class="card">
+      <p class="text-center">Pick your timeframe:</p>
+      <%= simple_form_for([@space, @booking]) do |f| %>
+        <div class="row" id="date-picker">
+          <div class="col">
+            <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id: "start_date"} %>
+          </div>
+          <div class="col">
+            <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "end_date"} %>
+          </div>
         </div>
-        <div class="col">
-          <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "end_date"} %>
+    </div>
+      <div class="card my-5">
+        <div class="row justify-content-between">
+          <div class="payment-method">
+            <h4>Payment Method:</h4>
+            <p>Card Holder:</p>
+            <span class="payment-input">Manfred "Money" Doersam<%= @booking.user %></span>
+            <div class="row justify-content-around mx-0">
+              <div>
+                <p>Visa: </p>
+                <span class="payment-input">****************09</span>
+              </div>
+              <div>
+                <p>CVC:</p> <span class="payment-input">084</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="cost" style="transition: 0.25s">Total Cost: <span id="total-cost"><%= @space.price %></span><span>€</span></h3>
+          </div>
         </div>
       </div>
   </div>
-    <div class="card my-5">
-      <div class="row justify-content-between">
-        <div class="payment-method">
-          <h4>Payment Method:</h4>
-          <p>Card Holder: <%= @booking.user %></p>
-          <p>Visa: 4567 3456 1223 1223 09</p>
-          <p>CVC: 084</p>
-        </div>
-        <div>
-          <h3 class="cost" style="transition: 0.5s">Total Cost: <span id="total-cost"><%= @space.price %></span><span>€</span></h3>
-        </div>
-      </div>
-    </div>
     <div class="float-right py-3">
       <%= f.submit "Confirm booking", class: 'button'  %>
     </div>

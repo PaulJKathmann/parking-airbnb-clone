@@ -4,11 +4,23 @@
 
 .changecost {
   font-weight: bold;
-  font-size: 28px;
-  color: $tgreen;
-  // transition: 1s;
+  font-size: 25px;
 }
 
 .cost {
   color: black;
+}
+
+.payment-input {
+  padding: 8px 16px;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.payment-method p {
+  margin-bottom: 12px;
+  margin-top: 16px;
+  color: rgba(0,0,0,0.5);
 }
