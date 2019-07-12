@@ -1,79 +1,34 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>My bookings and requests</title>
-
-</head>
-<body>
- <div class="container">
-   <h1 class ="my-4"->My Bookings</h1>
-
-  <% @bookings.each do |booking| %>
-
-  <div class="card">
-  <% if booking.status == "confirmed" %>
-    <div class="card-header bg-success">
-    <h6 class="my-0" style= "height: 16px;"> Status: <%=booking.status%></h6>
-  </div>
-  <% end %>
-
-  <% if booking.status == "pending" %>
-    <div class="card-header bg-warning">
-    <h6 class="my-0" style= "height: 16px;"> Status: <%=booking.status%></h6>
+<div class="container mt-2" >
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="future-tab" data-toggle="tab" href="#future" role="tab" aria-controls="future" aria-selected="true">My future bookings</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="current-tab" data-toggle="tab" href="#current" role="tab" aria-controls="current" aria-selected="false">My current bookings</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="past-tab" data-toggle="tab" href="#past" role="tab" aria-controls="past" aria-selected="false">My booking history</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="manage_my_spaces-tab" data-toggle="tab" href="#manage_my_spaces" role="tab" aria-controls="manage_my_spaces" aria-selected="false">Manage my parking spaces</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="future" role="tabpanel" aria-labelledby="future-tab">
+      <%= render "future_bookings"  %>
     </div>
-  <% end %>
-
-   <% if booking.status == "reject" %>
-    <div class="card-header bg-danger">
-    <h6 class="my-0" style= "height: 16px;"> Status: <%=booking.status%></h6>
+    <div class="tab-pane fade" id="current" role="tabpanel" aria-labelledby="current-tab">
+      <%= render "current_bookings"  %>
     </div>
-  <% end %>
-
-  <div class="card-body d-flex justify-content-between">
-   <div>
-    <h5 class="card-title">Address: <%=booking.space.address%></h5>
-    <p class="card-text">From <%=booking.start_date%>  To  <%=booking.end_date%></p>
-    <p class="card-text"> Size: <%=booking.space.size%> m²</p>
-   </div>
-
-   <div>
-    <p class="card-text">Total: <%= booking.cost %> €</p>
-    <%= link_to "Got to this booking", booking_path(booking), class: "button" %>
+    <div class="tab-pane fade" id="past" role="tabpanel" aria-labelledby="past-tab">
+      <%= render "past_bookings"  %>
+    </div>
+    <div class="tab-pane fade" id="manage_my_spaces" role="tabpanel" aria-labelledby="manage_my_spaces-tab">
+        <h1>
+          <%= render "my_spaces", user: @user %>
+        </h1>
     </div>
   </div>
-  </div>
- <% end %>
-
-  <h1 class ="my-4"->My Spaces</h1>
-  <% @spaces.each do |booking| %>
-  <% if booking.status == "pending" %>
-    <div class="border my-5">
-      <div class="card-header bg-warning">
-        <h6 class="my-0" style= "height: 16px;"> Status: <%=booking.status%></h6>
-      </div>
-      <div class="d-flex item-aligin-baseline justify-content-between p-4 bg-white">
-        <div>
-          <h5 class="card-title">Address: <%=booking.space.address%></h5>
-          <p class="card-text">From <%=booking.start_date%> to <%=booking.end_date%></p>
-          <p class="card-text"> Request sent by: <%=booking.user.email%></p>
-          <p>Total: 90 Euro</p>
-        </div>
-
-        <div class = "d-flex" style="flex-direction: column;margin-top: 16px;text-align:center">
-          <a href="#" class="btn-success p-1 my-2"> Accept </a>
-          <a href="#" class="btn-danger p-1 my-2"> Reject </a>
-          <%= link_to "Got to this booking", booking_path(booking), class: "btn-primary p-1 my-2" %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-  <% if booking.status == "pending" %>
-
-  <% end %>
- <% end %>
 </div>
-</body>
-</html>
+
+

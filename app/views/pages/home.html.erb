@@ -12,9 +12,16 @@
   </div>
 </div>
 
-<div class="container search-bar col-6 py-5">
-  <%= search_field_tag "browse city", nil  , class: "bar form-control", placeholder: "Berlin" %>
-  <%= link_to "Browse city", spaces_path, class: "button ml-2"  %>
+<div class="container search-bar col-6">
+    <div class="search-bar">
+        <%= form_tag spaces_path, method: :get, class: "d-flex search-bar" do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control bar",
+            placeholder: "Find a parking space" %>
+         <%= submit_tag "Search",class: "button ml-2" %>
+        <% end %>
+    </div>
 </div>
 
 <div class="container">

@@ -1,6 +1,6 @@
 .card {
   background-color: white;
-  padding: 48px;
+  padding: 40px;
   border: none;
   box-shadow: 4px 4px 12px rgba(0,0,0,0.1)
 }
@@ -19,4 +19,14 @@
   font-weight: bold;
   background: none;
   color: rgba(0,0,0,0.8);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.card-link:hover {
+  box-shadow: 0 0 3px rgba(0,0,0,.2);
+  position: relative;
+  top: -3px;
 }

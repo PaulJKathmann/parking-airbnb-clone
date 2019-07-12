@@ -1,0 +1,30 @@
+.nav-link{
+
+  color: rgb(180,180,180) !important;
+
+}
+
+.nav-link.active {
+  color: rgb(80,80,80) !important;
+
+  background-color: white !important;
+}
+
+.nav-link:hover {
+    color: $tgreen !important;
+}
+
+
+.bg-warning{
+    background-color: rgba(255,222,128,0.5) !important ;
+    color: rgb(60,60,60) !important;
+}
+.bg-success{
+    background-color: rgba(137,217,127,0.5) !important;
+    color: rgb(60,60,60) !important;
+}
+.bg-danger{
+    background-color: rgba(255,111,111,0.5) !important;
+    color: rgb(60,60,60) !important;
+}
+
