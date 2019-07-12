@@ -31,10 +31,14 @@ class BookingsController < ApplicationController
     @booking.space = @space
     @booking.user = current_user
     authorize @booking
-    @total_cost = @space.price * (@booking.end_date - @booking.start_date)
-    @booking.cost = @total_cost
-    if @booking.save
-      redirect_to bookings_path
+    if @booking.end_date && @booking.start_date
+      @total_cost = @space.price * (@booking.end_date - @booking.start_date)
+      @booking.cost = @total_cost
+      if @booking.save
+        redirect_to bookings_path
+      else
+        render :new
+      end
     else
       render :new
     end
