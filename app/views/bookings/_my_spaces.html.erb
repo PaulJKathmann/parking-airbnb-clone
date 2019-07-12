@@ -3,8 +3,8 @@
 <% if spaces.empty? %>
   <div class="container">
     <div class="container" style="justify-content: center;">
-      <p>you have not uploaded any space</p>
-      <%= link_to "new space", new_space_path, class: "button" %>
+      <p>You have not uploaded any space</p>
+      <%= link_to "New space", new_space_path, class: "button" %>
     </div>
   </div>
 <% else %>
@@ -20,7 +20,9 @@
             <h5 class="card-title" style="margin: 0; padding: 0;"><%= space.address %></h5>
             <h5 class="card-text" style="margin: 0; padding: 0;">Price: <%= space.price %> euro</h5>
             <h5 class="card-text mb-2" style="margin: 0; padding: 0;">Size: <%= space.size %> m^2</h5>
-            <%= link_to "Edit", space_path(space), class: "button h5" %>
+            <% if space.bookings.empty? %>
+            <%= link_to "Edit", edit_space_path(space), class: "button h5" %>
+            <% end %>
           </div>
         </div>
         <div class="container">
