@@ -6,7 +6,7 @@
 </head>
 <body>
   <div class="container ">
-    <div class = "my-3 py-2" ><h2 class="font-weight-bold text-center">You Booking on <%=@booking.start_date.to_date%></h2></div>
+    <div class = "my-3 py-2" ><h2 class="font-weight-bold text-center">Your Booking on <%=@booking.start_date.to_date%></h2></div>
 
     <div class="d-flex">
 
@@ -16,7 +16,7 @@
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
        </div>
         <div class="card-img-overlay d-flex  justify-content-between">
-        <div style="padding-top: 320px; color: black;">
+        <div style="position: relative;top: 320px;color: black;height: -moz-fit-content;">
           <div class="d-flex">
                 <i class="large material-icons" style="color: #02CCBA; margin-right: 8px;">location_on</i>
                 <h5 class="card-title"><%=@booking.space.address%></h5>
@@ -25,7 +25,8 @@
            <p class="card-text">End: <%=@booking.end_date%></p>
            <p class="card-text">Contact: <%=@booking.user.email%></p>
         </div>
-        <h5 class="card-text" style="padding-top:320px;width:max-content;color: black;">Total:<%=@booking.cost%> Euro</h5>
+        <h5 class="card-text" style="position: relative;top: 320px;color: black;height: -moz-fit-content;;width:max-content;">
+          Total:<%=@booking.cost%> Euro</h5>
        </div>
       </div>
 
