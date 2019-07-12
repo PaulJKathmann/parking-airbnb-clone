@@ -1,4 +1,7 @@
+<% count = 0 %>
+
 <% @bookings.each do |booking| %>
+  <% count =+ 1 %>
   <% if booking.start_date > Date.parse(Time.now.strftime('%Y/%m/%d'))%>
     <div class="card">
       <% case booking.status
@@ -27,4 +30,12 @@
       </div>
     </div>
   <% end %>
+<% end %>
+<% if count == 0 %>
+  <div class="container">
+    <div class="container" style="justify-content: center;">
+      <p>You don't have any future bookings</p>
+      <%= link_to "Book a space", spaces_path, class: "button" %>
+    </div>
+  </div>
 <% end %>
