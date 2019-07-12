@@ -3,7 +3,18 @@ class SpacesController < ApplicationController
   #if a method is written here you DO NOT NEED TO LOG IN to call it!
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @spaces = policy_scope(Space).order(created_at: :desc)
+    if params[:query].present?
+      @spaces = policy_scope(Space).where.not(latitude: nil, longitude: nil).where("address ILIKE ?", "%#{params[:query]}%")
+      @markers = @spaces.map do |space|
+      {
+        lat: space.latitude,
+        lng: space.longitude,
+      }
+      end
+    else
+      @spaces = policy_scope(Space).where.not(latitude: nil, longitude: nil)
+    end
+
   end
 
   def show
@@ -22,7 +33,7 @@ class SpacesController < ApplicationController
     @space.user = current_user
     authorize @space
     if @space.save
-      redirect_to spaces_path
+      redirect_to space_path(@space)
     else
       render :new
     end
