@@ -1,6 +1,8 @@
 .card {
   background-color: white;
-  padding: 48px;
+  padding: 40px;
+  border: none;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.1)
 }
 
 .home-card {
@@ -17,6 +19,7 @@
   font-weight: bold;
   background: none;
   color: rgba(0,0,0,0.8);
+  padding-left: 8px;
 }
 
 a:hover {
