@@ -4,7 +4,7 @@ const totalCostField = document.querySelector('#total-cost');
 const datepicker = document.querySelector('#date-picker');
 const dailyPrice = parseInt(document.querySelector('#daily-price').innerText, 10);
 const costView = document.querySelector('.cost')
-const togglefunc = () => {
+const toggleCost = () => {
   costView.classList.remove("changecost");
 }
 
@@ -13,14 +13,22 @@ const  calculateTotalCost = (event) => {
   const endDate = new Date(endDateField.value);
   const startDate = new Date(startDateField.value);
   const days = (endDate - startDate)/oneDay;
-  if (365 > days || days > 0) {
+  if (365 > days && days > 0) {
+    costView.classList.remove("changecost-red");
     totalCostField.innerHTML = days * dailyPrice;
     costView.classList.add("changecost");
-    setTimeout(togglefunc, 250);
-    // costView.classList.remove("changecost");
+    setTimeout(toggleCost, 250);
+  } else if (days < 0) {
+    totalCostField.innerHTML = days * dailyPrice;
+    costView.classList.add("changecost-red");
   };
 };
 
-startDateField.addEventListener('input', calculateTotalCost)
-endDateField.addEventListener('input', calculateTotalCost)
+const markNegative = (event) => {
+
+}
+
+startDateField.addEventListener('input', calculateTotalCost);
+endDateField.addEventListener('input', calculateTotalCost);
+
 
